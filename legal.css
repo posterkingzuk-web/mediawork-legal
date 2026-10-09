@@ -1,0 +1,8 @@
+:root{--bg:#1A0F3C;--surface:#24164F;--gold:#FFB800;--text:#F8F8F8;--muted:#A79FC4}
+*{box-sizing:border-box}
+body{margin:0;background:var(--bg);color:var(--text);font:16px/1.6 Montserrat,system-ui,-apple-system,sans-serif}
+main{max-width:720px;margin:0 auto;padding:24px 16px 64px}
+.brand{font-weight:800;letter-spacing:.5px;margin:0 0 8px}.brand span{color:var(--gold)}
+h1{font-size:28px;margin:8px 0 4px}h2{font-size:18px;margin:28px 0 8px;color:var(--gold)}
+a{color:var(--gold)}.muted{color:var(--muted);font-size:14px}
+ul{padding-left:20px}li{margin:6px 0}
