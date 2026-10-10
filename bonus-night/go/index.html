@@ -1,0 +1,39 @@
+<!doctype html><html lang="en"><head><meta charset="utf-8"><meta name="viewport" content="width=device-width, initial-scale=1"><title>Bonus Night</title><meta name="robots" content="noindex"><link rel="stylesheet" href="../../legal.css">
+<style>
+.card{background:var(--surface);border-radius:20px;padding:22px;margin:18px 0;text-align:center}
+.big{font-size:30px;font-weight:800;letter-spacing:1px;margin:6px 0;word-break:break-word}
+.btn{display:block;margin:12px 0;padding:14px;border-radius:999px;text-decoration:none;font-weight:700;color:#1A0F3C;background:linear-gradient(90deg,#FFE07A,#F5A623)}
+.btn.alt{background:none;border:2px solid var(--gold);color:var(--gold)}
+</style></head><body><main>
+<p class="brand">BONUS <span>NIGHT</span></p>
+<div class="card"><p id="what" class="muted">Opening Bonus Night…</p><p id="val" class="big"></p><p id="how" class="muted"></p>
+<a id="open" class="btn" href="#">Open Bonus Night</a></div>
+<p class="muted" style="text-align:center">Don't have it yet?</p>
+<a class="btn alt" href="https://play.google.com/store/apps/details?id=com.themediawork.bonusnight">Get it on Google Play</a>
+<a class="btn alt" href="https://apps.apple.com/app/id6820971599">Get it on the App Store</a>
+<p class="muted" style="text-align:center">18+ only. No gambling in the app.</p>
+</main>
+<script>
+(function () {
+  var q = new URLSearchParams(location.search);
+  var join = (q.get('join') || '').toUpperCase().replace(/[^A-Z0-9]/g, '').slice(0, 6);
+  var add = (q.get('add') || '').replace(/[^A-Za-z0-9 _.-]/g, '').slice(0, 18);
+  var deep = 'bonusnight://';
+  var what = document.getElementById('what'), val = document.getElementById('val'), how = document.getElementById('how');
+  if (join) {
+    deep += 'join/' + join;
+    what.textContent = "You're invited to a party. Code:";
+    val.textContent = join;
+    how.textContent = 'Or open the app, tap "Play on separate phones" and enter the code.';
+  } else if (add) {
+    deep += 'add/' + encodeURIComponent(add);
+    what.textContent = 'Add me on Bonus Night:';
+    val.textContent = add;
+    how.textContent = 'Or open the app, go to Friends and search this player name.';
+  } else {
+    what.textContent = 'The party app for slot nights with friends.';
+  }
+  document.getElementById('open').href = deep;
+  if (join || add) setTimeout(function () { location.href = deep; }, 250);
+})();
+</script></body></html>
